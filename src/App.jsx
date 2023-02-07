@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
+import SurveyPage from './pages/SurveyPage'
+import {Route, Routes} from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
   return (
     <div className="App">
-      
+      <Routes>
+        <Route path='/' element={<SurveyPage/>}/>
+      </Routes>
     </div>
   )
 }
