@@ -8,31 +8,22 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 function OverViewEvents() {
   const [workshop_count,setWorkshop_count] = useState();
-  const [chartRate,setChartRate] = useState();
-  const [excell,setExcell] = useState();
-  const [vrygood,setVrygood] = useState();
-  const [goood,setGoood] = useState();
-  const [pooor,setPooor] = useState();
-  const [members,setMembers] = useState();
+  const [ratingChart,setRatingChart] = useState();
+   const [members,setMembers] = useState();
   
-
- 
-
     
     useEffect(() => {
       axios
         .get("http://localhost:5000/api/survey/filter_count")
         .then((response) => {
-          setChartRate(response.data);
-          setExcell(response.data)
-          setVrygood(response.data)
-          setGoood(response.data)
-          setPooor(response.data)
-          console.log(response.data);
-          console.log(vrygood[0].count);
-          console.log(vrygood[1].count);
-          console.log(vrygood[2].count);
-          console.log(vrygood[3].count);
+   
+          setRatingChart(response.data)
+        
+          // console.log(response.data);
+          // console.log(ratingChart[0]?.count);
+          // console.log(ratingChart[1]?.count);
+          // console.log(ratingChart[2]?.count);
+          // console.log(ratingChart[3]?.count);
           
           // Handle response
         })
@@ -55,7 +46,8 @@ function OverViewEvents() {
         .get("http://localhost:5000/api/workshope/workshope_count")
         .then((response) => {
           setWorkshop_count(response.data.workshops);
-          // console.log(response.data.workshops);
+          console.log('response.data.workshops');
+          console.log(response.data.workshops);
           // Handle response
         })
         .catch((err) => {
@@ -80,7 +72,7 @@ function OverViewEvents() {
         {
           label: '# of Rates',
           // data: [chartRate[1]?.count, chartRate[1]?.count, chartRate[2]?.count, chartRate[3]?.count],
-          data: [3,9, 6, 1],
+          data: [ratingChart[0]?.count,ratingChart[1]?.count, ratingChart[2]?.count, ratingChart[3]?.count],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
