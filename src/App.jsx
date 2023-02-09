@@ -4,6 +4,7 @@ import SurveyPage from './pages/SurveyPage'
 import {Route, Routes} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
+import ReviewingPage from './comonents/ReviewingPage';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<SurveyPage/>}/>
+        <Route path='/invite/:id' element={<ReviewingPage/>}/>
       </Routes>
     </div>
   )
