@@ -4,6 +4,7 @@ import Modal from "./Model";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { v4 as uuidv4 } from 'uuid';
+import {Link} from "react-router-dom"
 
 function Navbar() {
   const notify = () => toast("Wow so easy !");
@@ -97,23 +98,19 @@ function Navbar() {
               </span>
               <span class="navbar-text">
                 <div class="dropdown dropstart">
-                  <a
-                    class="btn btn-secondary text-white dropdown-toggle"
-                    href="#"
-                    role="button"
-                    id="dropdownMenuLink"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                    style={{ backgroundColor: "#F19237", border: "none" }}
+                  <Link
+                   className="btn btn-secondary text-white dropdown-toggle"
+                   to="/invite"
+                   aria-expanded="false"
+                   style={{ backgroundColor: "#F19237", border: "none" }}
                   >
-                    Invite People
-                  </a>
+                  
 
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li >
-                    <span class="" href="#">http://127.0.0.1:5173/invite/{uuidv4()} </span>
-                    </li>
-                  </ul>
+                   
+      
+                    Invite People
+                    </Link>
+
                 </div>
               </span>
             </div>

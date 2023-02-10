@@ -11,6 +11,9 @@ function OverViewEvents() {
   const [ratingChart,setRatingChart] = useState();
    const [members,setMembers] = useState();
   
+
+ 
+
     
     useEffect(() => {
       axios
@@ -20,10 +23,10 @@ function OverViewEvents() {
           setRatingChart(response.data)
         
           // console.log(response.data);
-          // console.log(ratingChart[0]?.count);
-          // console.log(ratingChart[1]?.count);
-          // console.log(ratingChart[2]?.count);
-          // console.log(ratingChart[3]?.count);
+          console.log(ratingChart[0]?.count);
+          console.log(ratingChart[1]?.count);
+          console.log(ratingChart[2]?.count);
+          console.log(ratingChart[3]?.count);
           
           // Handle response
         })
@@ -72,7 +75,7 @@ function OverViewEvents() {
         {
           label: '# of Rates',
           // data: [chartRate[1]?.count, chartRate[1]?.count, chartRate[2]?.count, chartRate[3]?.count],
-          data: [ratingChart[0]?.count,ratingChart[1]?.count, ratingChart[2]?.count, ratingChart[3]?.count],
+          data: [4,6, 6, 8],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
